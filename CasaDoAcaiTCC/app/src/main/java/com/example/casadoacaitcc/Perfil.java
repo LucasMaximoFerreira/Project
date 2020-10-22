@@ -70,9 +70,9 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
                 txtNovoComp.setText(cliTela.getComp_cli());
                 txtNovotTel.setText(cliTela.getTel_cli());
 
-                if (cliTela.getGen_cli().equals("Masculino")) {
+                if (cliTela.getGen_cli().equals("M")) {
                     rbNovoMasc.setChecked(true);
-                } else if (cliTela.getGen_cli().equals("Feminino")) {
+                } else if (cliTela.getGen_cli().equals("F")) {
                     rbNovoFemin.setChecked(true);
                 } else {
                     rbNovoPND.setChecked(true);

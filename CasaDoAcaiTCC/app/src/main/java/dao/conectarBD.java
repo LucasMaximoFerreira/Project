@@ -200,8 +200,8 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
             String sql = "select * from cadastro_cliente where cpf_cli=? and senha_cli=?";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setString(1, classeCli.getCpf_cli());
-            comando.setString(2, classeCli.getSenha_cli());
+            comando.setString(1, cripto.encrypt(classeCli.getCpf_cli().getBytes()).replace("\n",""));
+            comando.setString(2, cripto.encrypt(classeCli.getSenha_cli().getBytes()).replace("\n",""));
             ResultSet tabelamemoria = comando.executeQuery();
 
             if (tabelamemoria.next()) {
@@ -224,18 +224,18 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
             String sql = "select nome_cli, senha_cli, email_cli, cep_cli, num_cli, comp_cli, tel_cli, gen_cli from cadastro_cliente where cpf_cli=?";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setString(1, classeCli.getCpf_cli());
+            comando.setString(1, cripto.encrypt(classeCli.getCpf_cli().getBytes()).replace("\n",""));
             ResultSet tabelamemoria = comando.executeQuery();
 
             if (tabelamemoria.next()) {
-                classeCli.setNome_cli(tabelamemoria.getString("nome_cli"));
-                classeCli.setSenha_cli(tabelamemoria.getString("senha_cli"));
-                classeCli.setEmail_cli(tabelamemoria.getString("email_cli"));
-                classeCli.setCep_cli(tabelamemoria.getString("cep_cli"));
-                classeCli.setNum_cli(tabelamemoria.getString("num_cli"));
-                classeCli.setComp_cli(tabelamemoria.getString("comp_cli"));
-                classeCli.setTel_cli(tabelamemoria.getString("tel_cli"));
-                classeCli.setGen_cli(tabelamemoria.getString("gen_cli"));
+                classeCli.setNome_cli(cripto.decrypt(tabelamemoria.getString("nome_cli")));
+                classeCli.setSenha_cli(cripto.decrypt(tabelamemoria.getString("senha_cli")));
+                classeCli.setEmail_cli(cripto.decrypt(tabelamemoria.getString("email_cli")));
+                classeCli.setCep_cli(cripto.decrypt(tabelamemoria.getString("cep_cli")));
+                classeCli.setNum_cli(cripto.decrypt(tabelamemoria.getString("num_cli")));
+                classeCli.setComp_cli(cripto.decrypt(tabelamemoria.getString("comp_cli")));
+                classeCli.setTel_cli(cripto.decrypt(tabelamemoria.getString("tel_cli")));
+                classeCli.setGen_cli(cripto.decrypt(tabelamemoria.getString("gen_cli")));
                 return true;
 
             } else {
