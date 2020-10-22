@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".ComprarAcai1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include2"
+            layout="@layout/main_toolbar" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="384dp"
+            android:layout_height="357dp"
+            android:layout_marginBottom="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAMANHO"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include2"
+            app:layout_constraintVertical_bias="0.53" />
+
+        <Button
+            android:id="@+id/btnComprarAcai1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.936" />
+
+        <TableLayout
+            android:layout_width="195dp"
+            android:layout_height="160dp"
+            tools:layout_editor_absoluteX="225dp"
+            tools:layout_editor_absoluteY="475dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="R$ 6,00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="41dp"
+                    android:layout_height="30dp"
+                    android:text="R$ 8,50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="78dp"
+                    android:layout_height="30dp"
+                    android:text="R$ 9,50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="69dp"
+                    android:layout_height="30dp"
+                    android:text="R$ 10,50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="8dp">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="84dp"
+                    android:layout_height="30dp"
+                    android:text="R$ 15,00" />
+            </TableRow>
+        </TableLayout>
+
+        <RadioGroup
+            android:id="@+id/rgTamanho"
+            android:layout_width="143dp"
+            android:layout_height="161dp"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="474dp">
+
+            <RadioButton
+                android:id="@+id/rb200ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="200ml" />
+
+            <RadioButton
+                android:id="@+id/rb300ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="300ml" />
+
+            <RadioButton
+                android:id="@+id/rb400ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="400ml" />
+
+            <RadioButton
+                android:id="@+id/rb500ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="500ml" />
+
+            <RadioButton
+                android:id="@+id/rb770ml"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="770ml" />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include
+            layout="@layout/activity_main_nav_drawer"/>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
