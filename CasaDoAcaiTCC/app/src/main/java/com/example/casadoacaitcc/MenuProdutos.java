@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import utils.utilsProduto;
+
 public class MenuProdutos extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton btnAcai;
@@ -91,8 +93,34 @@ public class MenuProdutos extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnAcai:
-                Intent perfil = new Intent(this, ComprarAcai1.class);
-                startActivity(perfil);
+                utilsProduto.setIdTipoProd(1);
+                Intent Acai = new Intent(this, ComprarAcai1.class);
+                startActivity(Acai);
+                break;
+            case R.id.btnSacole:
+                utilsProduto.setIdTipoProd(2);
+                Intent sacole = new Intent(this, ComprarAcai1.class);
+                startActivity(sacole);
+                break;
+            case R.id.btnGeladinho:
+                utilsProduto.setIdTipoProd(3);
+                Intent geladinho = new Intent(this, ComprarAcai1.class);
+                startActivity(geladinho);
+                break;
+            case R.id.btnSorvete:
+                utilsProduto.setIdTipoProd(4);
+                Intent sorvete = new Intent(this, ComprarAcai1.class);
+                startActivity(sorvete);
+                break;
+            case R.id.btnPicole:
+                utilsProduto.setIdTipoProd(5);
+                Intent picole = new Intent(this, ComprarAcai1.class);
+                startActivity(picole);
+                break;
+            case R.id.btnCremosinho:
+                utilsProduto.setIdTipoProd(6);
+                Intent cremosinho = new Intent(this, ComprarAcai1.class);
+                startActivity(cremosinho);
                 break;
         }
     }

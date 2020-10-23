@@ -17,23 +17,23 @@
             layout="@layout/main_toolbar" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/btnCremosinho"
             android:layout_width="156dp"
             android:layout_height="156dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.38"
-            app:layout_constraintStart_toEndOf="@+id/imageButton6"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+            app:layout_constraintStart_toEndOf="@+id/btnPicole"
+            app:layout_constraintTop_toBottomOf="@+id/btnSorvete"
             app:layout_constraintVertical_bias="0.336"
             tools:srcCompat="@drawable/cremosinho" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnSacole"
             android:layout_width="156dp"
             android:layout_height="156dp"
             android:background="@drawable/sacole"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+            app:layout_constraintBottom_toTopOf="@+id/btnSorvete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.847"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,8 +47,8 @@
             android:background="@drawable/acai"
             android:src="@drawable/acai"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintBottom_toTopOf="@+id/btnGeladinho"
+            app:layout_constraintEnd_toStartOf="@+id/btnSacole"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include3"
@@ -58,12 +58,12 @@
             tools:visibility="visible" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnGeladinho"
             android:layout_width="156dp"
             android:layout_height="156dp"
             android:layout_marginTop="176dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+            app:layout_constraintEnd_toStartOf="@+id/btnSorvete"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include3"
@@ -71,7 +71,7 @@
             tools:srcCompat="@drawable/geladinho" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/btnSorvete"
             android:layout_width="156dp"
             android:layout_height="156dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -83,14 +83,14 @@
             tools:srcCompat="@drawable/sorvete" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/btnPicole"
             android:layout_width="156dp"
             android:layout_height="156dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.141"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+            app:layout_constraintTop_toBottomOf="@+id/btnGeladinho"
             app:layout_constraintVertical_bias="0.338"
             tools:srcCompat="@drawable/picole" />
 

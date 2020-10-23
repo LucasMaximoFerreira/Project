@@ -55,6 +55,7 @@ public class Cadastro3 extends AppCompatActivity implements View.OnClickListener
 
                 cad.execute(0);
 
+
                 break;
 
         }

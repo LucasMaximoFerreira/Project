@@ -256,15 +256,15 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             String sql = "update cadastro_cliente set nome_cli=?, senha_cli=?, email_cli=?, " +
                     "cep_cli=?, num_cli=?, comp_cli=?, tel_cli=?, gen_cli=? where cpf_cli=?";
             PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setString(1, classeCli.getNome_cli());
-            comando.setString(2, classeCli.getSenha_cli());
-            comando.setString(3, classeCli.getEmail_cli());
-            comando.setString(4, classeCli.getCep_cli());
-            comando.setString(5, classeCli.getNum_cli());
-            comando.setString(6, classeCli.getComp_cli());
-            comando.setString(7, classeCli.getTel_cli());
-            comando.setString(8, classeCli.getGen_cli());
-            comando.setString(9, classeCli.getCpf_cli());
+            comando.setString(1, cripto.encrypt(classeCli.getNome_cli().getBytes()).replace("\n",""));
+            comando.setString(2, cripto.encrypt(classeCli.getSenha_cli().getBytes()).replace("\n",""));
+            comando.setString(3, cripto.encrypt(classeCli.getEmail_cli().getBytes()).replace("\n",""));
+            comando.setString(4, cripto.encrypt(classeCli.getCep_cli().getBytes()).replace("\n",""));
+            comando.setString(5, cripto.encrypt(classeCli.getNum_cli().getBytes()).replace("\n",""));
+            comando.setString(6, cripto.encrypt(classeCli.getComp_cli().getBytes()).replace("\n",""));
+            comando.setString(7, cripto.encrypt(classeCli.getTel_cli().getBytes()).replace("\n",""));
+            comando.setString(8, cripto.encrypt(classeCli.getGen_cli().getBytes()).replace("\n",""));
+            comando.setString(9, cripto.encrypt(classeCli.getCpf_cli().getBytes()).replace("\n",""));
 
             comando.executeUpdate();
 
