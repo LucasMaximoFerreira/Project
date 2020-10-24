@@ -12,10 +12,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import model.cadastro_cliente;
+import model.produto;
 import utils.criptografia;
+import utils.utilsProduto;
 
 public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
@@ -44,6 +48,21 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
     //////////////////////////////////////////
 
     criptografia cripto;
+    //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    //////////////////////////////////////////
+
+    private List<produto> listaAcai = new ArrayList<produto>();
+
+    public List<produto> getListaAcai() {
+        return listaAcai;
+    }
+
+    public void setListaAcai(List<produto> listaAcai) {
+        this.listaAcai = listaAcai;
+    }
     //////////////////////////////////////////
 
     //--------------------------------------//
@@ -115,6 +134,9 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             case 3:
                 resp = alterar();
                 break;
+            case 4:
+                resp = listarAcai();
+                break;
         }
 
         return resp;
@@ -153,6 +175,11 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
                     Toast.makeText(tela, "Informações alteradas com sucesso", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(tela, "erro na alteração - verifique as informações", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 4:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Acai", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -275,5 +302,33 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
         }
 
     }
+    public Boolean listarAcai(){
+
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaAcai.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 }
