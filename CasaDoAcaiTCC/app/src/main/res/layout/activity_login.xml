@@ -11,37 +11,49 @@
         android:id="@+id/textView12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CPF" />
+        android:text="CPF"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="137dp" />
 
     <EditText
         android:id="@+id/txtLogin"
-        android:layout_width="match_parent"
+        android:layout_width="367dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="156dp" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Senha" />
+        android:text="Senha"
+        tools:layout_editor_absoluteX="-37dp"
+        tools:layout_editor_absoluteY="242dp" />
 
     <EditText
         android:id="@+id/txtSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="269dp" />
 
     <Button
         android:id="@+id/btnLogar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logar" />
+        android:text="Logar"
+        tools:layout_editor_absoluteX="-35dp"
+        tools:layout_editor_absoluteY="504dp" />
 
     <Button
         android:id="@+id/btnCadastrarLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar" />
+        android:text="Cadastrar"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="686dp" />
 </LinearLayout>
