@@ -31,7 +31,10 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
     ProgressDialog dialogo;
 
     int op;
-    //////////////////////////////////////////
+
+
+    ////////////////////////////////////////// - Boolean Login
+
     private Boolean login;
 
     public Boolean getLogin() {
@@ -45,21 +48,20 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
     //--------------------------------------//
 
-    //////////////////////////////////////////
+    ////////////////////////////////////////// - Classe Cripto
 
     criptografia cripto;
     //////////////////////////////////////////
 
     //--------------------------------------//
 
-    //////////////////////////////////////////
+    ////////////////////////////////////////// - Lista Acai
 
     private List<produto> listaAcai = new ArrayList<produto>();
 
     public List<produto> getListaAcai() {
         return listaAcai;
     }
-
     public void setListaAcai(List<produto> listaAcai) {
         this.listaAcai = listaAcai;
     }
@@ -67,7 +69,79 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
 
     //--------------------------------------//
 
+    ////////////////////////////////////////// - Lista Cremosinho
+
+    private List<produto> listaCremosinho = new ArrayList<produto>();
+    public List<produto> getListaCremosinho() {
+        return listaCremosinho;
+    }
+
+    public void setListaCremosinho(List<produto> listaCremosinho) {
+        this.listaCremosinho = listaCremosinho;
+    }
+
     //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    ////////////////////////////////////////// - Lista Geladinho
+
+    private List<produto> listaGeladinho = new ArrayList<produto>();
+    public List<produto> getListaGeladinho() {
+        return listaGeladinho;
+    }
+
+    public void setListaGeladinho(List<produto> listaGeladinho) {
+        this.listaGeladinho = listaGeladinho;
+    }
+    //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    ////////////////////////////////////////// - Lista Picole
+
+    private List<produto> listaPicole = new ArrayList<produto>();
+    public List<produto> getListaPicole() {
+        return listaPicole;
+    }
+
+    public void setListaPicole(List<produto> listaPicole) {
+        this.listaPicole = listaPicole;
+    }
+    //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    ////////////////////////////////////////// - Lista Sacole
+
+    private List<produto> listaSacole = new ArrayList<produto>();
+    public List<produto> getListaSacole() {
+        return listaSacole;
+    }
+
+    public void setListaSacole(List<produto> listaSacole) {
+        this.listaSacole = listaSacole;
+    }
+    //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    ////////////////////////////////////////// - Lista Sorvete
+
+    private List<produto> listaSorvete = new ArrayList<produto>();
+    public List<produto> getListaSorvete() {
+        return listaSorvete;
+    }
+
+    public void setListaSorvete(List<produto> listaSorvete) {
+        this.listaSorvete = listaSorvete;
+    }
+    //////////////////////////////////////////
+
+    //--------------------------------------//
+
+    ////////////////////////////////////////// - Clasee Cliente
+
     private cadastro_cliente classeCli = new cadastro_cliente();
 
     public cadastro_cliente getClasseCli() {
@@ -137,6 +211,22 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             case 4:
                 resp = listarAcai();
                 break;
+            case 5:
+                resp = listarCremosinho();
+                break;
+            case 6:
+                resp = listarGeladinho();
+                break;
+            case 7:
+                resp = listarPicole();
+                break;
+            case 8:
+                resp = listarSacole();
+                break;
+            case 9:
+                resp = listarSorvete();
+                break;
+
         }
 
         return resp;
@@ -180,6 +270,31 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             case 4:
                 if (aBoolean == false) {
                     Toast.makeText(tela, "Nao existe Acai", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 5:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Cremosinho", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 6:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Geladinho", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 7:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Picole", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 8:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Sacole", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 9:
+                if (aBoolean == false) {
+                    Toast.makeText(tela, "Nao existe Sorvete", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -329,6 +444,139 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             return false;
         }
     }
+
+    public Boolean listarCremosinho() {
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaCremosinho.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Boolean listarSorvete() {
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaSorvete.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Boolean listarGeladinho() {
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaGeladinho.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Boolean listarPicole() {
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaPicole.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public Boolean listarSacole() {
+        try{
+            String sql = "select * from produto where id_tipoProd=?";
+            PreparedStatement comando = conexao.prepareStatement(sql);
+            comando.setInt(1, utilsProduto.getIdTipoProd());
+            ResultSet tabelaMemoria = comando.executeQuery();
+
+            while(tabelaMemoria.next()){
+
+                produto prodTEMP = new produto();
+
+                prodTEMP.setId_prod(tabelaMemoria.getInt("id_prod"));
+                prodTEMP.setNome_prod(cripto.decrypt(tabelaMemoria.getString("nome_prod")));
+                prodTEMP.setId_tipoProd(tabelaMemoria.getInt("id_tipoProd"));
+                prodTEMP.setTam_prod(cripto.decrypt(tabelaMemoria.getString("tam_prod")));
+                prodTEMP.setPreco_prod(Double.parseDouble(cripto.decrypt(tabelaMemoria.getString("preco_prod"))));
+
+                listaSacole.add(prodTEMP);
+
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 
 }

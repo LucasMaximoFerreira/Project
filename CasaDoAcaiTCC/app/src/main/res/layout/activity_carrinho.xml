@@ -13,13 +13,14 @@
         android:orientation="vertical">
         <include
             layout="@layout/main_toolbar"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="Home"
             android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

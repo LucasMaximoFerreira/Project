@@ -6,10 +6,13 @@ public class it_venda {
     private int id_prod;
     private int qtd_it;
     private double total_ped;
+    private String adicional;
+
 
     public int getId_it() {
         return id_it;
     }
+
 
     public void setId_it(int id_it) {
         this.id_it = id_it;
@@ -45,5 +48,13 @@ public class it_venda {
 
     public void setTotal_ped(double total_ped) {
         this.total_ped = total_ped;
+    }
+
+    public String getAdicional() {
+        return adicional;
+    }
+
+    public void setAdicional(String adicional) {
+        this.adicional = adicional;
     }
 }

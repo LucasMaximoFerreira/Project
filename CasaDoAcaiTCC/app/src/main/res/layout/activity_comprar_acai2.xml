@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".ComprarAcai2">
+    tools:context=".ComprasProduto.ComprarAcai2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,13 +18,13 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="376dp"
-            android:layout_height="302dp"
+            android:layout_width="335dp"
+            android:layout_height="250dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/include4"
-            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintVertical_bias="0.023"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
@@ -34,29 +34,31 @@
             android:text="ADICIONAIS"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:layout_constraintVertical_bias="0.071" />
+            app:layout_constraintVertical_bias="0.04" />
 
         <TableLayout
-            android:layout_width="164dp"
-            android:layout_height="126dp"
+            android:id="@+id/tableLayout"
+            android:layout_width="149dp"
+            android:layout_height="237dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.416"
-            app:layout_constraintStart_toEndOf="@+id/tableLayout"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:layout_constraintVertical_bias="0.412">
+            app:layout_constraintVertical_bias="0.303">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <CheckBox
-                    android:id="@+id/chkAmendoin"
+                    android:id="@+id/chkAmendoim"
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
-                    android:text="Amendoin" />
+                    android:text="Amendoim" />
             </TableRow>
 
             <TableRow
@@ -80,19 +82,6 @@
                     android:layout_height="wrap_content"
                     android:text="Granola" />
             </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tableLayout"
-            android:layout_width="150dp"
-            android:layout_height="130dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.145"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:layout_constraintVertical_bias="0.419">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -149,6 +138,93 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19"
             app:layout_constraintVertical_bias="0.844" />
+
+        <TableLayout
+            android:id="@+id/tableLayout3"
+            android:layout_width="172dp"
+            android:layout_height="223dp"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="378dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chkMorango"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="Morango" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chkChocolate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chocolate" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chkCaramelo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Caramelo" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:id="@+id/chkMenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menta" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chkTutiFruti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuti-Fruti" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chkMaracuja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maracujá" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CALDAS"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toEndOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.372" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

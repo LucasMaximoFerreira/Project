@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.casadoacaitcc.CadastroCliente.Cadastro1;
+import com.example.casadoacaitcc.Navegacao.MenuProdutos;
+
 import java.util.concurrent.ExecutionException;
 
 import dao.conectarBD;
