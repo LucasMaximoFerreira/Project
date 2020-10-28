@@ -7,21 +7,36 @@
     android:id="@+id/drawer_layout"
     tools:context=".ComprasProduto.ComprarPicole">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/main_toolbar"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Home"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
 
-    </LinearLayout>
+        <include
+            android:id="@+id/include7"
+            layout="@layout/main_toolbar" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="327dp"
+            android:layout_height="239dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include7"
+            app:layout_constraintVertical_bias="0.13"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ListView
+            android:id="@+id/lstPicole"
+            android:layout_width="312dp"
+            android:layout_height="260dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:layout_width="300dp"

@@ -4,7 +4,7 @@ abstract public class utilsCompra {
     private static String novaCompra;
     private static int ultimaVenda;
     private static double totalCompra;
-
+    private static double troco;
 
 
     public static String getNovaCompra() {
@@ -29,5 +29,13 @@ abstract public class utilsCompra {
 
     public static void setTotalCompra(double totalCompra) {
         utilsCompra.totalCompra = totalCompra;
+    }
+
+    public static double getTroco() {
+        return troco;
+    }
+
+    public static void setTroco(double troco) {
+        utilsCompra.troco = troco;
     }
 }

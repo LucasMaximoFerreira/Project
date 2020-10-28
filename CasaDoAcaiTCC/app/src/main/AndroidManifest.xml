@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ComprasProduto.ComprarCremosinho"></activity>
+        <activity android:name=".ConfirmarPedido"></activity>
+        <activity android:name=".ComprasProduto.ComprarCremosinho" />
         <activity android:name=".ComprasProduto.ComprarPicole" />
         <activity android:name=".ComprasProduto.ComprarSorvete" />
         <activity android:name=".ComprasProduto.ComprarGeladinho" />

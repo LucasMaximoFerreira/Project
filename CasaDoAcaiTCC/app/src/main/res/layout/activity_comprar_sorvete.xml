@@ -7,21 +7,38 @@
     android:id="@+id/drawer_layout"
     tools:context=".ComprasProduto.ComprarSorvete">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/main_toolbar"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Home"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
 
-    </LinearLayout>
+        <include
+            android:id="@+id/include9"
+            layout="@layout/main_toolbar" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="343dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include9"
+            app:layout_constraintVertical_bias="0.133"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ListView
+            android:id="@+id/lstSorvete"
+            android:layout_width="274dp"
+            android:layout_height="186dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.408"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:layout_constraintVertical_bias="0.473" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:layout_width="300dp"
