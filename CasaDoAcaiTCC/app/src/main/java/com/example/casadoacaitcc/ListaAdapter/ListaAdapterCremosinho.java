@@ -69,5 +69,5 @@ public class ListaAdapterCremosinho extends BaseAdapter {
     private class ItemSuporte{
         TextView lblCremosinho, lblPrecoCremosinho;
     }
-    
+
 }
