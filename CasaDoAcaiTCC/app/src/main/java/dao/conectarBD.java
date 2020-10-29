@@ -164,7 +164,7 @@ public class conectarBD extends AsyncTask<Integer, Object, Boolean> {
             e.printStackTrace();
         }
         try {
-            conexao = DriverManager.getConnection("jdbc:mysql://192.168.0.18:3306/casadoacai", "root", "lucas4max");
+            conexao = DriverManager.getConnection("jdbc:mysql://192.168.15.14:3306/casadoacai", "root", "lucas4max");
             return true;
 
         } catch (SQLException e) {
