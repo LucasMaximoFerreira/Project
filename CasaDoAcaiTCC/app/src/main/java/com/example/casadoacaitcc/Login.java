@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button btnCad, btnLogar;
 
     cadastro_cliente telaCliente;
-
+//grfs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
