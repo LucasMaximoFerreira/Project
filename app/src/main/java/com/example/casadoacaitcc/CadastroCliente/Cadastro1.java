@@ -16,7 +16,8 @@ public class Cadastro1 extends AppCompatActivity implements View.OnClickListener
 
     EditText txtNome, txtSenha, txtEmail, txtData;
     Button btnCad1;
-
+//romeu
+//e julieta
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
