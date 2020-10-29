@@ -37,7 +37,7 @@ public class ComprarSacole extends AppCompatActivity implements AdapterView.OnIt
             lstSacole = findViewById(R.id.lstSacole);
 
             listar = new conectarBD(this);
-            listar.execute(6).get();
+            listar.execute(8).get();
 
             ListaSacoleTela = listar.getListaSacole();
 

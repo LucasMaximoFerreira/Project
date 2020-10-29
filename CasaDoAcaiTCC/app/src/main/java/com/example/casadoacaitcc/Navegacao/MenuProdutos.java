@@ -10,13 +10,18 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.casadoacaitcc.ComprasProduto.ComprarAcai1;
+import com.example.casadoacaitcc.ComprasProduto.ComprarCremosinho;
+import com.example.casadoacaitcc.ComprasProduto.ComprarGeladinho;
+import com.example.casadoacaitcc.ComprasProduto.ComprarPicole;
+import com.example.casadoacaitcc.ComprasProduto.ComprarSacole;
+import com.example.casadoacaitcc.ComprasProduto.ComprarSorvete;
 import com.example.casadoacaitcc.R;
 
 import utils.utilsProduto;
 
 public class MenuProdutos extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton btnAcai;
+    ImageButton btnAcai, btnSacole, btnGeladinho, btnSorvete, btnPicole, btnCremosinho;
     DrawerLayout drawerLayout;
 
     @Override
@@ -24,9 +29,20 @@ public class MenuProdutos extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_produtos);
         btnAcai = findViewById(R.id.btnAcai);
-        drawerLayout = findViewById(R.id.drawer_layout);
+        btnSacole = findViewById(R.id.btnSacole);
+        btnGeladinho = findViewById(R.id.btnGeladinho);
+        btnSorvete = findViewById(R.id.btnSorvete);
+        btnPicole = findViewById(R.id.btnPicole);
+        btnCremosinho = findViewById(R.id.btnCremosinho);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        
         btnAcai.setOnClickListener(this);
+        btnSacole.setOnClickListener(this);
+        btnGeladinho.setOnClickListener(this);
+        btnSorvete.setOnClickListener(this);
+        btnPicole.setOnClickListener(this);
+        btnCremosinho.setOnClickListener(this);
     }
 
     public void ClickMenu(View view) {
@@ -95,27 +111,27 @@ public class MenuProdutos extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnSacole:
                 utilsProduto.setIdTipoProd(2);
-                Intent sacole = new Intent(this, ComprarAcai1.class);
+                Intent sacole = new Intent(this, ComprarSacole.class);
                 startActivity(sacole);
                 break;
             case R.id.btnGeladinho:
                 utilsProduto.setIdTipoProd(3);
-                Intent geladinho = new Intent(this, ComprarAcai1.class);
+                Intent geladinho = new Intent(this, ComprarGeladinho.class);
                 startActivity(geladinho);
                 break;
             case R.id.btnSorvete:
                 utilsProduto.setIdTipoProd(4);
-                Intent sorvete = new Intent(this, ComprarAcai1.class);
+                Intent sorvete = new Intent(this, ComprarSorvete.class);
                 startActivity(sorvete);
                 break;
             case R.id.btnPicole:
                 utilsProduto.setIdTipoProd(5);
-                Intent picole = new Intent(this, ComprarAcai1.class);
+                Intent picole = new Intent(this, ComprarPicole.class);
                 startActivity(picole);
                 break;
             case R.id.btnCremosinho:
                 utilsProduto.setIdTipoProd(6);
-                Intent cremosinho = new Intent(this, ComprarAcai1.class);
+                Intent cremosinho = new Intent(this, ComprarCremosinho.class);
                 startActivity(cremosinho);
                 break;
         }

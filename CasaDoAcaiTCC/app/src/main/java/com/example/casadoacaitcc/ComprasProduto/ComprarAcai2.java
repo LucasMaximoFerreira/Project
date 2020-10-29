@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import com.example.casadoacaitcc.Carrinho;
+import com.example.casadoacaitcc.ConfirmarPedido;
 import com.example.casadoacaitcc.R;
 
 import model.it_venda;
@@ -63,7 +64,7 @@ public class ComprarAcai2 extends AppCompatActivity implements View.OnClickListe
 
                 AdicionarItem();
 
-                Intent telaProd = new Intent(this, Carrinho.class);
+                Intent telaProd = new Intent(this, ConfirmarPedido.class);
                 startActivity(telaProd);
 
                 break;

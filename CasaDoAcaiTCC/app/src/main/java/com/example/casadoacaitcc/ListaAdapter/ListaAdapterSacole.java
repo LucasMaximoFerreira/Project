@@ -50,7 +50,7 @@ public class ListaAdapterSacole extends BaseAdapter {
 
             itemTela = new ListaAdapterSacole.ItemSuporte();
 
-            itemTela.lblSacole = convertView.findViewById(R.id.lblGeladinho);
+            itemTela.lblSacole = convertView.findViewById(R.id.lblSacole);
             itemTela.lblPrecoSacole = convertView.findViewById(R.id.lblPrecoSacole);
 
             convertView.setTag(itemTela);

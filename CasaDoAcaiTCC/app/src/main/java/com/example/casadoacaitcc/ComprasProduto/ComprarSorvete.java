@@ -36,7 +36,7 @@ public class ComprarSorvete extends AppCompatActivity implements AdapterView.OnI
             lstSorvete = findViewById(R.id.lstSorvete);
 
             listar = new conectarBD(this);
-            listar.execute(6).get();
+            listar.execute(9).get();
 
             ListaSorveteTela = listar.getListaSorvete();
 

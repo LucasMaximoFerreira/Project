@@ -38,7 +38,7 @@ public class ComprarPicole extends AppCompatActivity implements AdapterView.OnIt
             lstPicole = findViewById(R.id.lstPicole);
 
             listar = new conectarBD(this);
-            listar.execute(6).get();
+            listar.execute(7).get();
 
             ListaPicoleTela = listar.getListaPicole();
 
