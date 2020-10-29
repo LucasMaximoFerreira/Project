@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".Navegacao.MenuProdutos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/main_toolbar" />
+
+        <ImageButton
+            android:id="@+id/btnCremosinho"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toEndOf="@+id/btnPicole"
+            app:layout_constraintTop_toBottomOf="@+id/btnSorvete"
+            app:layout_constraintVertical_bias="0.336"
+            tools:srcCompat="@drawable/cremosinho" />
+
+        <ImageButton
+            android:id="@+id/btnSacole"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:background="@drawable/sacole"
+            app:layout_constraintBottom_toTopOf="@+id/btnSorvete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.64" />
+
+        <ImageButton
+            android:id="@+id/btnAcai"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:background="@drawable/acai"
+            android:src="@drawable/acai"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnGeladinho"
+            app:layout_constraintEnd_toStartOf="@+id/btnSacole"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.664"
+            tools:src="@drawable/acai"
+            tools:srcCompat="@drawable/acai"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/btnGeladinho"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:layout_marginTop="176dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSorvete"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.275"
+            tools:srcCompat="@drawable/geladinho" />
+
+        <ImageButton
+            android:id="@+id/btnSorvete"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3"
+            app:layout_constraintVertical_bias="0.52"
+            tools:srcCompat="@drawable/sorvete" />
+
+        <ImageButton
+            android:id="@+id/btnPicole"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGeladinho"
+            app:layout_constraintVertical_bias="0.338"
+            tools:srcCompat="@drawable/picole" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+        <include
+            layout="@layout/activity_main_nav_drawer"/>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
