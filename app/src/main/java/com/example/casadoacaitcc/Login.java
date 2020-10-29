@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     EditText txtLogin, txtSenha;
     Button btnCad, btnLogar;
-//beleza
+//belez
     cadastro_cliente telaCliente;
 
     @Override
